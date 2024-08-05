@@ -1,0 +1,143 @@
+@mixin keyframe($animation-name,$progress)
+    @keyframes #{$animation-name}
+        from
+            width: 0%
+
+        to
+            width: $progress
+
+.about
+    padding: 70px 0px
+
+    .intro
+        width: 340px
+        .heading
+            font-family: 'Inter-Regular'
+            font-size: 25px
+            color: #8671ff
+            user-select: none
+
+        .desc
+            text-align: justify
+            font-family: "Inter-Light"
+            font-size: 14px
+
+        .desc-link
+            color: black
+            font-style: italic
+            text-underline-offset: 3px
+
+    .brief
+        display: flex
+
+        .intro:not(:last-child)
+            margin-right: 100px
+
+        .intro
+            margin-top: 60px
+
+            .desc
+                margin-bottom: 5px
+
+            .details
+                p
+                    font-family: 'Inter-Light'
+
+                .title
+                    font-family: 'Inter-Regular'
+                    margin-bottom: 1px
+                    font-size: 14px
+
+            .skills
+                margin-top: 20px
+                font-size: 14px
+                font-family: 'Inter-Light'
+
+                .skill
+
+                    .progress-area
+                        margin-top: 5px
+                        width: 100%
+                        background: #D9D9D9
+
+                        .progress
+                            height: 6px
+                            background: #8671ff
+
+                        .web
+                            @include keyframe(web,80%)
+                            animation: web 1s ease-in-out forwards
+
+                        .mobile
+                            @include keyframe(mobile,40%)
+                            animation: mobile 1s ease-in-out forwards
+
+                        .design
+                            @include keyframe(design,65%)
+                            animation: design 1s ease-in-out forwards
+
+                        .dsa
+                            @include keyframe(dsa,70%)
+                            animation: dsa 1s ease-in-out forwards
+
+                .skill:not(:last-child)
+                    margin-bottom: 25px
+
+    .resume-area
+        display: flex
+        justify-content: center
+        margin-top: 30px
+
+        .resume
+            border: 1px solid black
+            padding: 10px 30px
+            display: flex
+            align-items: center
+            background: none
+            &:hover
+                cursor: pointer
+
+            .resume-text
+                font-family: 'Inter-Regular'
+                font-size: 14px
+                color: black
+                text-decoration: none
+
+            img
+                width: 15px
+                margin-right: 10px
+
+
+@media screen and ( max-width: 992px )
+    .about
+
+        .intro
+            width: 300px
+
+        .brief
+
+            .intro:not(:last-child)
+                margin-right: 50px
+
+@media screen and ( max-width: 768px )
+    .about
+        padding: 50px 0px 50px 20px
+
+        .intro
+            width: 340px
+
+        .brief
+            display: flex
+            flex-direction: column
+            justify-content: start
+
+            .intro
+                margin-top: 40px
+
+            .intro:not(:last-child)
+                margin-right: 0px
+
+@media screen and ( max-width: 600px )
+    .about
+        .intro
+            width: 300px

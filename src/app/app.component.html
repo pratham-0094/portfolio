@@ -1,0 +1,86 @@
+<!-- loader -->
+<div class="loader-container" id="loader">
+  <div class="loader"></div>
+</div>
+
+<button class="button" id="nav-button" mat-icon-button color="primary"
+  (click)="nav_toggle()">
+  <mat-icon id="icon">menu</mat-icon>
+</button>
+
+<div class="navigation">
+  <nav class="nav" id="nav">
+    <ul class="nav-items">
+      <li (click)="active_toogle('HOME')" class="HOME nav-item active">HOME</li>
+      <li (click)="active_toogle('ABOUT')" class="ABOUT nav-item">ABOUT</li>
+      <li (click)="active_toogle('PROJECTS')" class="PROJECTS nav-item">
+        PROJECTS
+      </li>
+      <li (click)="active_toogle('SERVICES')" class="SERVICES nav-item">
+        SERVICES
+      </li>
+      <li (click)="active_toogle('CONTACT')" class="CONTACT nav-item">
+        CONTACT
+      </li>
+    </ul>
+  </nav>
+</div>
+
+<app-home></app-home>
+
+<div class="container">
+  <app-about></app-about>
+</div>
+
+<div class="work">
+  <div class="project-info">
+    <img src="/assets/images/about/project.svg" alt="project" class="project" />
+    <p><span class="project-count">10</span><br />COMPLETED PROJECTS</p>
+  </div>
+  <div class="hire">
+    <p class="invite-message">Need my help for project ?</p>
+    <button (click)="active_toogle('CONTACT')" class="invite-button">HIRE ME</button>
+  </div>
+</div>
+
+<app-projects></app-projects>
+
+<div class="services">
+  <app-services></app-services>
+</div>
+
+<app-contact></app-contact>
+
+<footer class="footer">
+  <h1 class="copywrite">
+    Copyright © 2023 <span class="copywrite-author">Prakhar Sahu</span>.
+    <a href="https://privacy-policy-test-site">Privacy Policy</a>
+  </h1>
+  <div class="footer-area">
+    <p class="footer-message">
+      Connect with me. I'm always ready to tallk about projects
+    </p>
+    <div class="socials">
+      <button class="social-button">
+        <a href="https://instagram.com/pratham_0094" target="_blank">
+          <img src="/assets/images/home/instagram.svg" alt="instagram" />
+        </a>
+      </button>
+      <button class="social-button">
+        <a href="https://twitter.com/pratham_0094" target="_blank">
+          <img src="/assets/images/home/x.svg" alt="x " />
+        </a>
+      </button>
+      <button class="social-button">
+        <a href="https://www.linkedin.com/in/pratham-sahu-513a00206/" target="_blank">
+          <img src="/assets/images/home/linkedin.svg" alt="linkedin" />
+        </a>
+      </button>
+      <button class="social-button">
+        <a href="https://github.com/pratham-0094" target="_blank">
+          <img src="/assets/images/home/github.svg" alt="github" />
+        </a>
+      </button>
+    </div>
+  </div>
+</footer>

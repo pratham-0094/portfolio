@@ -1,0 +1,259 @@
+@mixin keyframe($animation-name)
+    @keyframes #{$animation-name}
+        0%
+            transform: rotate(0deg)
+
+        100%
+            transform: rotate(360deg)
+
+
+.loader-container
+    position: fixed
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    background-color: white
+    z-index: 100
+    display: flex
+    justify-content: center
+    align-items: center
+
+    .loader
+        border: 4px solid #8671ff5f
+        border-left-color: transparent
+        width: 36px
+        height: 36px
+        border-radius: 50%
+        @include keyframe(moving)
+        animation: moving 1s linear infinite
+
+
+.button
+    border: 0.5px solid #8671ff
+    border-radius: 100px
+    display: flex
+    align-items: center
+    justify-content: center
+    position: fixed
+    right: 30px
+    top: 20px
+    z-index: 1
+    background: #8671ff5f
+
+    #icon
+        transition: transform 0.5s ease-in-out
+
+.navigation
+    overflow: hidden
+    user-select: none
+    z-index: 1
+
+    .nav
+        visibility: hidden
+        background-color: #e1ddfa
+        height: 100vh
+        width: 300px
+        float: right
+        font-size: 18px
+        padding: 70px 0px 0px 70px
+        position: fixed
+        right: -310px
+        transition: all 0.5s ease-in-out
+
+    .nav-items
+        list-style: none
+        position: relative
+
+        .nav-item
+            margin: 20px 0px
+            cursor: pointer
+            font-weight: 400
+
+        .active::before
+            content: url('/assets/images/navbar/brush.svg')
+            position: absolute
+            left: -40px
+
+        .active
+            color: #8671ff
+
+.container
+    background-image: url('/assets/images/about/bg.jpg')
+    background-size: cover
+    display: flex
+    justify-content: center
+
+.work
+    background-image: url("/assets/images/about/hire_bg.jpg")
+    background-attachment: fixed
+    background-position: center
+    background-repeat: no-repeat
+    background-size: cover
+    display: flex
+    justify-content: center
+    align-items: center
+    height: 300px
+    color: #eaeaeb
+
+    .project-info
+        user-select: none
+        text-align: center
+        margin-right: 100px
+
+        .project
+            width: 70px
+            height: 90px
+            margin-bottom: 20px
+
+        p
+            font-family: 'Inter-Regular'
+            font-size: 17px
+            margin-bottom: 0px
+
+        .project-count
+            font-family: 'Inter-Regular'
+            font-size: 35px
+
+    .hire
+        display: flex
+        align-items: center
+        justify-content: center
+
+        .invite-message
+            font-family: 'Inter-Regular'
+            margin-bottom: 0px
+            margin-right: 20px
+            font-size: 25px
+
+        .invite-button
+            color: white
+            font-family: 'Inter-Light'
+            background: transparent
+            border: 0.5px solid white
+            padding: 10px 15px
+            font-size: 14px
+
+            &:hover
+                transition: all 0.3s ease-in-out
+                color: black
+                cursor: pointer
+                background: white
+
+.services
+    background: #eaeaeb
+
+.footer
+    padding: 50px 0px
+    background: #eaeaeb
+    width: 100%
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: center
+    font-size: 14px
+    gap: 20px
+
+    .copywrite
+        font-family: "Inter-Light"
+        font-size: 14px
+
+        .copywrite-author
+
+    .footer-area
+        display: flex
+        flex-direction: column
+        align-items: center
+        justify-content: center
+
+        .footer-message
+            text-align: center
+            font-family: "Inter-Light"
+
+        .socials
+
+            .social-button
+                border: 0.3px solid black
+                cursor: pointer
+                background: transparent
+                width: 40px
+                height: 40px
+                border-radius: 100px
+                transition: all 0.5s ease-in-out
+
+                a
+                    display: flex
+                    align-items: center
+                    justify-content: center
+
+                &:hover img
+                    filter: invert(1)
+
+                &:hover
+                    background: black
+
+            .social-button:not(:last-child)
+                margin-right: 25px
+
+            @at-root
+                img
+                    width: 20px
+                    transition: all 0.5s ease-in-out
+
+@media screen and ( max-width: 992px )
+    .work
+        height: 260px
+
+        .project-info
+            margin-right: 50px
+
+            .project
+                width: 50px
+                height: 70px
+                margin-bottom: 15px
+
+            p
+                font-size: 14px
+
+            .project-count
+                font-size: 25px
+
+        .hire
+
+            .invite-message
+                margin-right: 15px
+                font-size: 20px
+
+            .invite-button
+                font-size: 14px
+
+@media screen and ( max-width: 768px )
+    .work
+        justify-content: space-around
+        padding: 0px 20px
+
+        .project-info
+            .project
+                margin-bottom: 5px
+
+        .hire
+            flex-direction: column
+
+            .invite-message
+                margin-right: 0px
+                margin-bottom: 10px
+                text-align: center
+
+    .footer
+        padding: 30px 0px
+        gap: 10px
+
+@media screen and ( max-width: 600px )
+    .button
+        right: 20px
+
+    .work
+        height: 250px
+
+    .container
+        display: block

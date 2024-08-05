@@ -1,0 +1,10 @@
+<section id="PROJECTS" class="projects">
+  <h1 class="heading">PROJECTS</h1>
+  <div class="cards">
+    <div class="card" *ngFor="let i of projects">
+      <a target="_blank" href="{{i.link}}">
+        <img class="project-image" src="{{ i.src }}" alt="{{ i.title }}" />
+      </a>
+    </div>
+  </div>
+</section>
