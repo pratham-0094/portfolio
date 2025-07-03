@@ -1,31 +1,31 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   selector: 'app-projects',
+  imports: [MatIconModule],
   templateUrl: './projects.component.html',
   styleUrls: ['./projects.component.sass'],
 })
 export class ProjectsComponent {
-  projects = [
-    {
-      title: 'Juicy-N-Yummy',
-      link: 'https://github.com/pratham-0094/Juicy-N-Yummy',
-      src: '/assets/images/projects/juicy-n-yummy.jpg',
-    },
-    {
-      title: 'INO',
-      link: 'https://github.com/prakhar-5447/INO',
-      src: '/assets/images/projects/ino.jpg',
-    },
-    {
-      title: 'Firstmy',
-      link: 'https://github.com/prakhar-5447/firstmy',
-      src: '/assets/images/projects/firstmy.jpg',
-    },
-    {
-      title: 'Todo App',
-      link: 'https://github.com/prakhar-5447/angular-project',
-      src: '/assets/images/projects/todo-app.jpg',
-    },
-  ];
+  @ViewChild('slidesContainer', { static: true }) slidesContainer!: ElementRef;
+
+  scroll() {
+    const container = this.slidesContainer.nativeElement;
+    const slideWidth = container.querySelector('.slide').clientWidth;
+    const scrollAmount = slideWidth;
+    const maxScrollLeft = container.scrollWidth - container.clientWidth;
+
+    if (container.scrollLeft + scrollAmount >= maxScrollLeft) {
+      container.scrollTo({
+        left: 0,
+        behavior: 'smooth'
+      });
+    } else {
+      container.scrollBy({
+        left: scrollAmount,
+        behavior: 'smooth'
+      });
+    }
+  }
 }

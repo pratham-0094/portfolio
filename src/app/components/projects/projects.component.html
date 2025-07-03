@@ -1,10 +1,59 @@
-<section id="PROJECTS" class="projects">
-  <h1 class="heading">PROJECTS</h1>
-  <div class="cards">
-    <div class="card" *ngFor="let i of projects">
-      <a target="_blank" href="{{i.link}}">
-        <img class="project-image" src="{{ i.src }}" alt="{{ i.title }}" />
-      </a>
+<section id="PROJECTS" class="projects-section">
+  <div class="container">
+    <div class="left-content">
+      <div class="content">
+        <h2>Latest <span>Projects</span></h2>
+        <p>Explore some of the projects I've worked on. Each project showcases my skills and dedication to delivering
+          high-quality work.</p>
+        <a href="https://github.com/pratham-0094" target="_blank" class="cta-button">View GitHub</a>
+      </div>
+      <div class="slider-nav">
+        <button class="next" (click)="scroll()">&#8592;</button>
+      </div>
+    </div>
+    <div class="slides" #slidesContainer>
+      <div class="space"></div>
+      <div class="slide">
+        <img src="./images/projects/juicy-n-yummy.jpg" alt="Juicy-N-Yummy" class="project-image" />
+        <div class="links">
+          <a href="https://github.com/pratham-0094/Juicy-N-Yummy" target="_blank">
+            <button class="social-button">
+              Github
+            </button>
+          </a>
+          <a href="https://pratham-0094.github.io/Juicy-N-Yummy" target="_blank">
+            <button class="social-button">
+              <mat-icon>call_made</mat-icon>
+            </button>
+          </a>
+        </div>
+      </div>
+      <div class="slide">
+        <img src="./images/projects/sweetandcrave.png" alt="SweetAndCrave" class="project-image" />
+        <div class="links">
+          <a href="https://sweetandcrave.framer.website/" target="_blank">
+            <button class="social-button">
+              <mat-icon>call_made</mat-icon>
+            </button>
+          </a>
+        </div>
+      </div>
+      <div class="slide">
+        <img src="./images/projects/devstash.png" alt="Devstash" class="project-image" />
+        <div class="links">
+          <a href="https://github.com/prakhar-5447/devstash-flutter" target="_blank">
+            <button class="social-button">
+              Github
+            </button>
+          </a>
+        </div>
+      </div>
+      <div class="slide">
+        <img src="./images/projects/brewbrust.png" alt="BrewBrust" class="project-image" />
+        <div class="links">
+        </div>
+      </div>
+      <div class="space"></div>
     </div>
   </div>
 </section>
