@@ -61,13 +61,13 @@ export class AppComponent {
     });
   }
 
-  // @HostListener('window:load', [])
-  // onLoad(): void {
-  //   const loader = document.getElementById('loader');
-  //   // Hide the loader after 5 seconds
-  //   setTimeout(function () {
-  //     loader!.style.display = 'none';
-  //   }, 3000); // 3000 milliseconds = 3 seconds
-  // }
+  @HostListener('window:load', [])
+  onLoad(): void {
+    const loader = document.getElementById('loader');
+    // Hide the loader after 5 seconds
+    setTimeout(function () {
+      loader!.style.display = 'none';
+    }, 1000); // 3000 milliseconds = 3 seconds
+  }
 
 }

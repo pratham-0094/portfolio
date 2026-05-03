@@ -125,6 +125,66 @@
                     justify-content: center
                     align-items: center
 
+    .accordion-section
+        margin-top: 60px
+        user-select: none
+
+        h3
+            font-family: 'Inter-Bold'
+            font-size: 24px
+            margin-bottom: 20px
+            color: #333
+            span
+                color: #FF7171
+
+        .accordion-item
+            border-bottom: 1px solid #ddd
+
+            .accordion-header
+                display: flex
+                justify-content: space-between
+                padding: 15px
+                cursor: pointer
+                font-family: 'Inter-Medium'
+                font-size: 16px
+                transition: 0.3s
+                .header
+                    display: flex
+                    gap: 12px
+                    .label
+                        background: #ff7171
+                        color: white
+                        border-radius: 100px
+                        border: none
+                        font-size: 12px
+                        padding: 1px 8px
+
+            .accordion-body
+                font-size: 16px
+                font-family: 'Inter-Regular'
+                line-height: 1.5
+                padding: 15px
+                animation: fadeIn 0.3s ease
+
+                .links
+                    margin-top: 10px
+                    display: flex
+                    gap: 8px
+                    .social-button
+                        background: #ff7171
+                        color: white
+                        padding: 8px 12px
+                        border: none
+                        border-radius: 4px
+
+@keyframes fadeIn
+    from
+        opacity: 0
+        transform: translateY(-5px)
+    to
+        opacity: 1
+        transform: translateY(0)
+
 @media screen and ( max-width: 1200px )
     .projects-section
         padding: 80px 60px
